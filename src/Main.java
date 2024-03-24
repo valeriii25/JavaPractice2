@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
@@ -18,6 +15,9 @@ public class Main {
                 countFrequency(line);
             }
             return true;
+        } catch (FileNotFoundException e) {
+            System.out.println("error: file not found");
+            return false;
         } catch (IOException e) {
             System.out.println("error while file opening");
             return false;
